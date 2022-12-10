@@ -49,6 +49,7 @@
                                     <form class="text-start" method="POST" action="/account">
                                     @csrf
                                     <br>
+
                                         <div class="mb-3">
                                             <label for="name" class="col-sm-2 col-form-label">Nama</label>
                                             <div class="col-sm-10">
@@ -60,6 +61,19 @@
                                             @enderror
                                             </div>
                                         </div>
+
+                                        <div class="mb-3">
+                                            <label for="nip" class="col-sm-2 col-form-label">NIP</label>
+                                            <div class="col-sm-10">
+                                            <input type="text" name="nip" class="form-control @error('nip') is-invalid @enderror" id="nip" placeholder="Masukkan nip" required>
+                                            @error('nip')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                            </div>
+                                        </div>
+
                                         <div class="mb-3">
                                             <label for="email" class="col-sm-2 col-form-label">Email</label>
                                             <div class="col-sm-10">

@@ -39,6 +39,7 @@ class AdminController extends Controller
     {
         User::create([
             'name' => $data['name'],
+            'nip' => $data['nip'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
@@ -79,6 +80,7 @@ class AdminController extends Controller
     {
         User::where('id', $data->id)->update([
             'name' => $data['name'],
+            'nip' => $data['nip'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
@@ -99,9 +101,7 @@ class AdminController extends Controller
         $datas->delete();
 
         return redirect('/account')->with('status', 'Data berhasil dihapus');
-//         <div class="alert alert-success">
-//         <strong>Success!</strong> This alert box could indicate a successful or positive action.
-//   </div>
+
 
     }
 }

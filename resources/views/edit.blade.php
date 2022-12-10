@@ -62,6 +62,19 @@
                                             @enderror
                                             </div>
                                         </div>
+
+                                        <div class="mb-3">
+                                            <label for="nip" class="col-sm-2 col-form-label">nip</label>
+                                            <div class="col-sm-10">
+                                            <input type="text" name="nip" class="form-control @error('nip') is-invalid @enderror" id="nip" placeholder="Masukkan nip" required value="{{ old('nip', $datas->nip) }}">
+                                            @error('nip')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                            </div>
+                                        </div>
+
                                         <div class="mb-3">
                                             <label for="email" class="col-sm-2 col-form-label">email</label>
                                             <div class="col-sm-10">
@@ -98,60 +111,3 @@
 </body>
 </html>
 
-<div class="container">
-    
-</div>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Edit Data') }}</div>
-                    <div class="card-body">
-                        <div class="row-1">
-                        <a href="/account" class="btn btn-success">< Kembali</a>
-                        </div>
-                        <form class="text-start" method="POST" action="/account/{{ $datas->id }}">
-                        @method('put')
-                        @csrf
-                        <br>
-                        <input type="hidden" name="id" id="id" value="{{ old('id', $datas->id) }}">
-                            <div class="mb-3">
-                                <label for="name" class="col-sm-2 col-form-label">name</label>
-                                <div class="col-sm-10">
-                                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Masukkan name" required value="{{ old('name', $datas->name) }}">
-                                @error('name')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="col-sm-2 col-form-label">email</label>
-                                <div class="col-sm-10">
-                                <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Masukkan nama" required value="{{ old('email', $datas->email) }}">
-                                @error('email')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="col-sm-2 col-form-label">Password</label>
-                                <div class="col-sm-10">
-                                <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Masukkan nama" required value="{{ old('password', $datas->password) }}">
-                                @error('password')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                    </div>
-            </div>
-        </div>
-    </div>
-</div>
