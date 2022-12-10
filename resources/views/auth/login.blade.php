@@ -66,9 +66,7 @@
                                         {{ __('Login') }}
                                     </button>
 
-                                    <p class="fw-lighter fs-6">Don't have an account,
-                                        <span class="btn btn-link" href="{{ route('register') }}">{{ __('Register') }}</span>
-                                    </p>
+                                    
 
                                 </div>
                             </form>
